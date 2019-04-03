@@ -1,0 +1,29 @@
+<mat-card style="text-align: center;">
+	<mat-list>
+		<ng-container *ngFor="let article of service.getArticles()">
+			<mat-list-item>
+				<span>
+        {{ article.name }}
+      </span> 
+      <span style="flex: 1 1 auto;"></span>
+      
+
+      <button *ngIf="service.hasCurCommande()" (click)="service.decrementArticle(article)">-</button>
+        <input style="width: 20px;text-align: center;" disabled="true" value="{{ service.getArticleQty(article) }}">
+      <button *ngIf="service.hasCurCommande()" (click)="service.incrementArticle(article)">+</button>
+      <span>&nbsp;</span>
+      <mat-icon class="example-icon" (click)="open(article.id)">{{isOpen(article.id) ? "expand_less" : "expand_more"}}</mat-icon>
+    </mat-list-item>
+    <mat-list-item *ngIf="isOpen(article.id)">
+				<button  mat-stroked-button color="warn" (click)="service.deleteArticle(article)" >
+        Supp
+      </button>
+      <span style="flex: 1 1 auto;"></span>
+      <button  mat-stroked-button color="warn" (click)="deleteArticle(article)" >
+        a
+      </button>
+    </mat-list-item>
+
+    </ng-container>
+  </mat-list>
+</mat-card>

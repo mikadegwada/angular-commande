@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header>
+    <button mat-raised-button color="primary" (click)="service.newCommande()">Nouvelle commande</button>
+  </mat-card-header>
+  <mat-list>
+    <mat-list-item *ngFor="let c of service.getCommandes()">
+      <span>
+        {{ c.name }}</span> 
+        <span style="flex: 1 1 auto;"></span>
+        <button  mat-stroked-button color="accent" (click)="service.currentCommande(c)" >Cur</button>
+      <button  mat-stroked-button color="warn" (click)="service.deleteCommande(c)" >Supp</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

@@ -1,0 +1,19 @@
+<mat-card style="text-align: center;">
+
+<form>
+
+	<mat-form-field>
+		<mat-label>Nom</mat-label>
+		<input  matInput  placeholder="Nom du produit" [(ngModel)]="article.name"  name="article.name"  required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Cat</mat-label>
+		<input  matInput  placeholder="" [(ngModel)]="article.cat"  name="article.cat"  required>
+  </mat-form-field>
+  <div>
+  <button mat-raised-button color="primary" (click)="onClick()">Ajouter</button>
+  </div>
+ 
+</form>
+</mat-card>
